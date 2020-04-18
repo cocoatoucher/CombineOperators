@@ -1,6 +1,6 @@
 <p align="center">
 <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
-<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/promo.png" width="400" max-width="80%" alt="Combine Operators App Store"/>
+<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/promo.png" width="600" max-width="80%" alt="Combine Operators App Store"/>
 </p>
 
 # Combine Operators
@@ -15,7 +15,7 @@
 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"/>
 </p>
 
-Combine Operators is an interactive tutorial/cheat sheet app that lets you play with Combine framework publishers. It can help you grasp basic concepts or if you are a beginner or refresh your memory during your further journey with the framework.
+Combine Operators is an interactive tutorial/cheat sheet app that you can download on the iOS App Store. It lets you play with Combine framework publishers and can help you grasp basic concepts if you are a beginner or refresh your memory during your further journey with the framework.
 
 With Combine Operators you can
 - Interact directly with underlying publisher instances through an intuitive UI.
