@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EFB9F6A244B3FEF00FDDA42 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB9F69244B3FEF00FDDA42 /* SubjectView.swift */; };
+		4EFE2F37244B26E90000E4AE /* CombineOperatorsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFE2F2D244B26E90000E4AE /* CombineOperatorsCore.framework */; };
+		4EFE2F3C244B26E90000E4AE /* CombineOperatorsCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F3B244B26E90000E4AE /* CombineOperatorsCoreTests.swift */; };
+		4EFE2F3E244B26E90000E4AE /* CombineOperatorsCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFE2F30244B26E90000E4AE /* CombineOperatorsCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFE2F4F244B29F80000E4AE /* BaseOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F4C244B29F80000E4AE /* BaseOperatorViewController.swift */; };
+		4EFE2F50244B29F80000E4AE /* OperatorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F4D244B29F80000E4AE /* OperatorInfoViewController.swift */; };
+		4EFE2F51244B29F80000E4AE /* OperatorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F4E244B29F80000E4AE /* OperatorsTableViewController.swift */; };
+		4EFE2F54244B2A070000E4AE /* InputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F53244B2A070000E4AE /* InputButton.swift */; };
+		4EFE2F70244B2A230000E4AE /* OperatorDropFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F56244B2A230000E4AE /* OperatorDropFirstViewController.swift */; };
+		4EFE2F71244B2A230000E4AE /* OperatorReplaceNilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F57244B2A230000E4AE /* OperatorReplaceNilViewController.swift */; };
+		4EFE2F72244B2A230000E4AE /* OperatorDebounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F58244B2A230000E4AE /* OperatorDebounceViewController.swift */; };
+		4EFE2F73244B2A230000E4AE /* OperatorDropWhileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F59244B2A230000E4AE /* OperatorDropWhileViewController.swift */; };
+		4EFE2F74244B2A230000E4AE /* OperatorIgnoreOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F5A244B2A230000E4AE /* OperatorIgnoreOutputViewController.swift */; };
+		4EFE2F75244B2A230000E4AE /* OperatorFlatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F5B244B2A230000E4AE /* OperatorFlatMapViewController.swift */; };
+		4EFE2F76244B2A230000E4AE /* OperatorTimeoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F5C244B2A230000E4AE /* OperatorTimeoutViewController.swift */; };
+		4EFE2F77244B2A230000E4AE /* OperatorReduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F5D244B2A230000E4AE /* OperatorReduceViewController.swift */; };
+		4EFE2F78244B2A230000E4AE /* OperatorLastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F5E244B2A230000E4AE /* OperatorLastViewController.swift */; };
+		4EFE2F79244B2A230000E4AE /* OperatorCompactMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F5F244B2A230000E4AE /* OperatorCompactMapViewController.swift */; };
+		4EFE2F7A244B2A230000E4AE /* OperatorMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F60244B2A230000E4AE /* OperatorMapViewController.swift */; };
+		4EFE2F7B244B2A230000E4AE /* OperatorZipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F62244B2A230000E4AE /* OperatorZipViewController.swift */; };
+		4EFE2F7C244B2A230000E4AE /* OperatorCombineLatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F63244B2A230000E4AE /* OperatorCombineLatestViewController.swift */; };
+		4EFE2F7D244B2A230000E4AE /* OperatorMulticastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F64244B2A230000E4AE /* OperatorMulticastViewController.swift */; };
+		4EFE2F7E244B2A230000E4AE /* OperatorPrependViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F65244B2A230000E4AE /* OperatorPrependViewController.swift */; };
+		4EFE2F7F244B2A230000E4AE /* OperatorAppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F66244B2A230000E4AE /* OperatorAppendViewController.swift */; };
+		4EFE2F80244B2A230000E4AE /* OperatorPrefixUntilOutputFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F67244B2A230000E4AE /* OperatorPrefixUntilOutputFromViewController.swift */; };
+		4EFE2F81244B2A230000E4AE /* OperatorDropUntilOutputFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F68244B2A230000E4AE /* OperatorDropUntilOutputFromViewController.swift */; };
+		4EFE2F82244B2A230000E4AE /* OperatorMergeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F69244B2A230000E4AE /* OperatorMergeViewController.swift */; };
+		4EFE2F83244B2A230000E4AE /* OperatorCollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F6A244B2A230000E4AE /* OperatorCollectViewController.swift */; };
+		4EFE2F84244B2A230000E4AE /* OperatorFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F6B244B2A230000E4AE /* OperatorFirstViewController.swift */; };
+		4EFE2F85244B2A230000E4AE /* OperatorRemoveDuplicatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F6C244B2A230000E4AE /* OperatorRemoveDuplicatesViewController.swift */; };
+		4EFE2F86244B2A230000E4AE /* OperatorThrottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F6D244B2A230000E4AE /* OperatorThrottleViewController.swift */; };
+		4EFE2F87244B2A230000E4AE /* OperatorReplaceEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F6E244B2A230000E4AE /* OperatorReplaceEmptyViewController.swift */; };
+		4EFE2F88244B2A230000E4AE /* OperatorFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F6F244B2A230000E4AE /* OperatorFilterViewController.swift */; };
+		4EFE2F93244B2A500000E4AE /* ValueNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F8B244B2A500000E4AE /* ValueNode.swift */; };
+		4EFE2F94244B2A500000E4AE /* OldValueNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F8C244B2A500000E4AE /* OldValueNode.swift */; };
+		4EFE2F95244B2A500000E4AE /* TimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F8D244B2A500000E4AE /* TimerNode.swift */; };
+		4EFE2F96244B2A500000E4AE /* OperatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F8E244B2A500000E4AE /* OperatorNode.swift */; };
+		4EFE2F97244B2A500000E4AE /* BandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F8F244B2A500000E4AE /* BandNode.swift */; };
+		4EFE2F98244B2A500000E4AE /* SubjectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F90244B2A500000E4AE /* SubjectNode.swift */; };
+		4EFE2F99244B2A500000E4AE /* OperatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F91244B2A500000E4AE /* OperatorScene.swift */; };
+		4EFE2F9A244B2A500000E4AE /* TimeUpdatingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F92244B2A500000E4AE /* TimeUpdatingScene.swift */; };
+		4EFE2FA0244B2B930000E4AE /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F9E244B2B930000E4AE /* Operator.swift */; };
+		4EFE2FA1244B2B930000E4AE /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE2F9F244B2B930000E4AE /* Subject.swift */; };
+		4EFE3009244B311F0000E4AE /* OperatorVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFE3008244B311F0000E4AE /* OperatorVariant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4EFE2F38244B26E90000E4AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EFE2F24244B26E90000E4AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EFE2F2C244B26E90000E4AE;
+			remoteInfo = CombineOperatorsCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4EFB9F69244B3FEF00FDDA42 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		4EFE2F2D244B26E90000E4AE /* CombineOperatorsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineOperatorsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EFE2F30244B26E90000E4AE /* CombineOperatorsCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CombineOperatorsCore.h; sourceTree = "<group>"; };
+		4EFE2F31244B26E90000E4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EFE2F36244B26E90000E4AE /* CombineOperatorsCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineOperatorsCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EFE2F3B244B26E90000E4AE /* CombineOperatorsCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineOperatorsCoreTests.swift; sourceTree = "<group>"; };
+		4EFE2F3D244B26E90000E4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EFE2F49244B29510000E4AE /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		4EFE2F4C244B29F80000E4AE /* BaseOperatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperatorViewController.swift; sourceTree = "<group>"; };
+		4EFE2F4D244B29F80000E4AE /* OperatorInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorInfoViewController.swift; sourceTree = "<group>"; };
+		4EFE2F4E244B29F80000E4AE /* OperatorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorsTableViewController.swift; sourceTree = "<group>"; };
+		4EFE2F53244B2A070000E4AE /* InputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputButton.swift; sourceTree = "<group>"; };
+		4EFE2F56244B2A230000E4AE /* OperatorDropFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorDropFirstViewController.swift; sourceTree = "<group>"; };
+		4EFE2F57244B2A230000E4AE /* OperatorReplaceNilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorReplaceNilViewController.swift; sourceTree = "<group>"; };
+		4EFE2F58244B2A230000E4AE /* OperatorDebounceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorDebounceViewController.swift; sourceTree = "<group>"; };
+		4EFE2F59244B2A230000E4AE /* OperatorDropWhileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorDropWhileViewController.swift; sourceTree = "<group>"; };
+		4EFE2F5A244B2A230000E4AE /* OperatorIgnoreOutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorIgnoreOutputViewController.swift; sourceTree = "<group>"; };
+		4EFE2F5B244B2A230000E4AE /* OperatorFlatMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorFlatMapViewController.swift; sourceTree = "<group>"; };
+		4EFE2F5C244B2A230000E4AE /* OperatorTimeoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTimeoutViewController.swift; sourceTree = "<group>"; };
+		4EFE2F5D244B2A230000E4AE /* OperatorReduceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorReduceViewController.swift; sourceTree = "<group>"; };
+		4EFE2F5E244B2A230000E4AE /* OperatorLastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorLastViewController.swift; sourceTree = "<group>"; };
+		4EFE2F5F244B2A230000E4AE /* OperatorCompactMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorCompactMapViewController.swift; sourceTree = "<group>"; };
+		4EFE2F60244B2A230000E4AE /* OperatorMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorMapViewController.swift; sourceTree = "<group>"; };
+		4EFE2F62244B2A230000E4AE /* OperatorZipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorZipViewController.swift; sourceTree = "<group>"; };
+		4EFE2F63244B2A230000E4AE /* OperatorCombineLatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorCombineLatestViewController.swift; sourceTree = "<group>"; };
+		4EFE2F64244B2A230000E4AE /* OperatorMulticastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorMulticastViewController.swift; sourceTree = "<group>"; };
+		4EFE2F65244B2A230000E4AE /* OperatorPrependViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorPrependViewController.swift; sourceTree = "<group>"; };
+		4EFE2F66244B2A230000E4AE /* OperatorAppendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorAppendViewController.swift; sourceTree = "<group>"; };
+		4EFE2F67244B2A230000E4AE /* OperatorPrefixUntilOutputFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorPrefixUntilOutputFromViewController.swift; sourceTree = "<group>"; };
+		4EFE2F68244B2A230000E4AE /* OperatorDropUntilOutputFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorDropUntilOutputFromViewController.swift; sourceTree = "<group>"; };
+		4EFE2F69244B2A230000E4AE /* OperatorMergeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorMergeViewController.swift; sourceTree = "<group>"; };
+		4EFE2F6A244B2A230000E4AE /* OperatorCollectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorCollectViewController.swift; sourceTree = "<group>"; };
+		4EFE2F6B244B2A230000E4AE /* OperatorFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorFirstViewController.swift; sourceTree = "<group>"; };
+		4EFE2F6C244B2A230000E4AE /* OperatorRemoveDuplicatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorRemoveDuplicatesViewController.swift; sourceTree = "<group>"; };
+		4EFE2F6D244B2A230000E4AE /* OperatorThrottleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorThrottleViewController.swift; sourceTree = "<group>"; };
+		4EFE2F6E244B2A230000E4AE /* OperatorReplaceEmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorReplaceEmptyViewController.swift; sourceTree = "<group>"; };
+		4EFE2F6F244B2A230000E4AE /* OperatorFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorFilterViewController.swift; sourceTree = "<group>"; };
+		4EFE2F8B244B2A500000E4AE /* ValueNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueNode.swift; sourceTree = "<group>"; };
+		4EFE2F8C244B2A500000E4AE /* OldValueNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldValueNode.swift; sourceTree = "<group>"; };
+		4EFE2F8D244B2A500000E4AE /* TimerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerNode.swift; sourceTree = "<group>"; };
+		4EFE2F8E244B2A500000E4AE /* OperatorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorNode.swift; sourceTree = "<group>"; };
+		4EFE2F8F244B2A500000E4AE /* BandNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandNode.swift; sourceTree = "<group>"; };
+		4EFE2F90244B2A500000E4AE /* SubjectNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectNode.swift; sourceTree = "<group>"; };
+		4EFE2F91244B2A500000E4AE /* OperatorScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorScene.swift; sourceTree = "<group>"; };
+		4EFE2F92244B2A500000E4AE /* TimeUpdatingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUpdatingScene.swift; sourceTree = "<group>"; };
+		4EFE2F9B244B2AAA0000E4AE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		4EFE2F9E244B2B930000E4AE /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		4EFE2F9F244B2B930000E4AE /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		4EFE3008244B311F0000E4AE /* OperatorVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorVariant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EFE2F2A244B26E90000E4AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EFE2F33244B26E90000E4AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EFE2F37244B26E90000E4AE /* CombineOperatorsCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4EFE2F23244B26E90000E4AE = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F31244B26E90000E4AE /* Info.plist */,
+				4EFE2F49244B29510000E4AE /* Package.swift */,
+				4EFE2F9B244B2AAA0000E4AE /* .swiftlint.yml */,
+				4EFE2F47244B29250000E4AE /* Sources */,
+				4EFE2F48244B29250000E4AE /* Tests */,
+				4EFE2F2E244B26E90000E4AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4EFE2F2E244B26E90000E4AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F2D244B26E90000E4AE /* CombineOperatorsCore.framework */,
+				4EFE2F36244B26E90000E4AE /* CombineOperatorsCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EFE2F47244B29250000E4AE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F30244B26E90000E4AE /* CombineOperatorsCore.h */,
+				4EFE2F89244B2A500000E4AE /* OperatorScene */,
+				4EFE2F4B244B29EF0000E4AE /* ViewControllers */,
+				4EFE2F52244B29FF0000E4AE /* Views */,
+				4EFE2F9D244B2B8A0000E4AE /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4EFE2F48244B29250000E4AE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F3B244B26E90000E4AE /* CombineOperatorsCoreTests.swift */,
+				4EFE2F3D244B26E90000E4AE /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		4EFE2F4B244B29EF0000E4AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F4E244B29F80000E4AE /* OperatorsTableViewController.swift */,
+				4EFE2F4C244B29F80000E4AE /* BaseOperatorViewController.swift */,
+				4EFE2F4D244B29F80000E4AE /* OperatorInfoViewController.swift */,
+				4EFE2F55244B2A230000E4AE /* OperatorViewControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4EFE2F52244B29FF0000E4AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F53244B2A070000E4AE /* InputButton.swift */,
+				4EFB9F69244B3FEF00FDDA42 /* SubjectView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4EFE2F55244B2A230000E4AE /* OperatorViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F56244B2A230000E4AE /* OperatorDropFirstViewController.swift */,
+				4EFE2F57244B2A230000E4AE /* OperatorReplaceNilViewController.swift */,
+				4EFE2F58244B2A230000E4AE /* OperatorDebounceViewController.swift */,
+				4EFE2F59244B2A230000E4AE /* OperatorDropWhileViewController.swift */,
+				4EFE2F5A244B2A230000E4AE /* OperatorIgnoreOutputViewController.swift */,
+				4EFE2F5B244B2A230000E4AE /* OperatorFlatMapViewController.swift */,
+				4EFE2F5C244B2A230000E4AE /* OperatorTimeoutViewController.swift */,
+				4EFE2F5D244B2A230000E4AE /* OperatorReduceViewController.swift */,
+				4EFE2F5E244B2A230000E4AE /* OperatorLastViewController.swift */,
+				4EFE2F5F244B2A230000E4AE /* OperatorCompactMapViewController.swift */,
+				4EFE2F60244B2A230000E4AE /* OperatorMapViewController.swift */,
+				4EFE2F6A244B2A230000E4AE /* OperatorCollectViewController.swift */,
+				4EFE2F6B244B2A230000E4AE /* OperatorFirstViewController.swift */,
+				4EFE2F6C244B2A230000E4AE /* OperatorRemoveDuplicatesViewController.swift */,
+				4EFE2F6D244B2A230000E4AE /* OperatorThrottleViewController.swift */,
+				4EFE2F6E244B2A230000E4AE /* OperatorReplaceEmptyViewController.swift */,
+				4EFE2F6F244B2A230000E4AE /* OperatorFilterViewController.swift */,
+				4EFE2F61244B2A230000E4AE /* Combined */,
+			);
+			path = OperatorViewControllers;
+			sourceTree = "<group>";
+		};
+		4EFE2F61244B2A230000E4AE /* Combined */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F62244B2A230000E4AE /* OperatorZipViewController.swift */,
+				4EFE2F63244B2A230000E4AE /* OperatorCombineLatestViewController.swift */,
+				4EFE2F64244B2A230000E4AE /* OperatorMulticastViewController.swift */,
+				4EFE2F65244B2A230000E4AE /* OperatorPrependViewController.swift */,
+				4EFE2F66244B2A230000E4AE /* OperatorAppendViewController.swift */,
+				4EFE2F67244B2A230000E4AE /* OperatorPrefixUntilOutputFromViewController.swift */,
+				4EFE2F68244B2A230000E4AE /* OperatorDropUntilOutputFromViewController.swift */,
+				4EFE2F69244B2A230000E4AE /* OperatorMergeViewController.swift */,
+			);
+			path = Combined;
+			sourceTree = "<group>";
+		};
+		4EFE2F89244B2A500000E4AE /* OperatorScene */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F92244B2A500000E4AE /* TimeUpdatingScene.swift */,
+				4EFE2F91244B2A500000E4AE /* OperatorScene.swift */,
+				4EFE2F8A244B2A500000E4AE /* Nodes */,
+			);
+			path = OperatorScene;
+			sourceTree = "<group>";
+		};
+		4EFE2F8A244B2A500000E4AE /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE2F8B244B2A500000E4AE /* ValueNode.swift */,
+				4EFE2F8C244B2A500000E4AE /* OldValueNode.swift */,
+				4EFE2F8D244B2A500000E4AE /* TimerNode.swift */,
+				4EFE2F8E244B2A500000E4AE /* OperatorNode.swift */,
+				4EFE2F8F244B2A500000E4AE /* BandNode.swift */,
+				4EFE2F90244B2A500000E4AE /* SubjectNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		4EFE2F9D244B2B8A0000E4AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4EFE3008244B311F0000E4AE /* OperatorVariant.swift */,
+				4EFE2F9E244B2B930000E4AE /* Operator.swift */,
+				4EFE2F9F244B2B930000E4AE /* Subject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4EFE2F28244B26E90000E4AE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EFE2F3E244B26E90000E4AE /* CombineOperatorsCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4EFE2F2C244B26E90000E4AE /* CombineOperatorsCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EFE2F41244B26E90000E4AE /* Build configuration list for PBXNativeTarget "CombineOperatorsCore" */;
+			buildPhases = (
+				4EFE2F28244B26E90000E4AE /* Headers */,
+				4EFE2F29244B26E90000E4AE /* Sources */,
+				4EFE2F2A244B26E90000E4AE /* Frameworks */,
+				4EFE2F2B244B26E90000E4AE /* Resources */,
+				4EFB9F6B244B4AE200FDDA42 /* swiftlint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CombineOperatorsCore;
+			productName = CombineOperatorsCore;
+			productReference = 4EFE2F2D244B26E90000E4AE /* CombineOperatorsCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4EFE2F35244B26E90000E4AE /* CombineOperatorsCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EFE2F44244B26E90000E4AE /* Build configuration list for PBXNativeTarget "CombineOperatorsCoreTests" */;
+			buildPhases = (
+				4EFE2F32244B26E90000E4AE /* Sources */,
+				4EFE2F33244B26E90000E4AE /* Frameworks */,
+				4EFE2F34244B26E90000E4AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EFE2F39244B26E90000E4AE /* PBXTargetDependency */,
+			);
+			name = CombineOperatorsCoreTests;
+			productName = CombineOperatorsCoreTests;
+			productReference = 4EFE2F36244B26E90000E4AE /* CombineOperatorsCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EFE2F24244B26E90000E4AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Glide Engine";
+				TargetAttributes = {
+					4EFE2F2C244B26E90000E4AE = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+					4EFE2F35244B26E90000E4AE = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 4EFE2F27244B26E90000E4AE /* Build configuration list for PBXProject "CombineOperatorsCore" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EFE2F23244B26E90000E4AE;
+			productRefGroup = 4EFE2F2E244B26E90000E4AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EFE2F2C244B26E90000E4AE /* CombineOperatorsCore */,
+				4EFE2F35244B26E90000E4AE /* CombineOperatorsCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EFE2F2B244B26E90000E4AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EFE2F34244B26E90000E4AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EFB9F6B244B4AE200FDDA42 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EFE2F29244B26E90000E4AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EFE2F99244B2A500000E4AE /* OperatorScene.swift in Sources */,
+				4EFE2FA1244B2B930000E4AE /* Subject.swift in Sources */,
+				4EFE2F86244B2A230000E4AE /* OperatorThrottleViewController.swift in Sources */,
+				4EFE2F95244B2A500000E4AE /* TimerNode.swift in Sources */,
+				4EFE2F83244B2A230000E4AE /* OperatorCollectViewController.swift in Sources */,
+				4EFE2F78244B2A230000E4AE /* OperatorLastViewController.swift in Sources */,
+				4EFE2F50244B29F80000E4AE /* OperatorInfoViewController.swift in Sources */,
+				4EFE2F80244B2A230000E4AE /* OperatorPrefixUntilOutputFromViewController.swift in Sources */,
+				4EFE2F71244B2A230000E4AE /* OperatorReplaceNilViewController.swift in Sources */,
+				4EFE2F7A244B2A230000E4AE /* OperatorMapViewController.swift in Sources */,
+				4EFE2F82244B2A230000E4AE /* OperatorMergeViewController.swift in Sources */,
+				4EFE2F93244B2A500000E4AE /* ValueNode.swift in Sources */,
+				4EFE2F75244B2A230000E4AE /* OperatorFlatMapViewController.swift in Sources */,
+				4EFB9F6A244B3FEF00FDDA42 /* SubjectView.swift in Sources */,
+				4EFE2F77244B2A230000E4AE /* OperatorReduceViewController.swift in Sources */,
+				4EFE2F84244B2A230000E4AE /* OperatorFirstViewController.swift in Sources */,
+				4EFE2F97244B2A500000E4AE /* BandNode.swift in Sources */,
+				4EFE2F96244B2A500000E4AE /* OperatorNode.swift in Sources */,
+				4EFE2F7F244B2A230000E4AE /* OperatorAppendViewController.swift in Sources */,
+				4EFE2F87244B2A230000E4AE /* OperatorReplaceEmptyViewController.swift in Sources */,
+				4EFE2F79244B2A230000E4AE /* OperatorCompactMapViewController.swift in Sources */,
+				4EFE2F94244B2A500000E4AE /* OldValueNode.swift in Sources */,
+				4EFE2F7E244B2A230000E4AE /* OperatorPrependViewController.swift in Sources */,
+				4EFE2F54244B2A070000E4AE /* InputButton.swift in Sources */,
+				4EFE2F76244B2A230000E4AE /* OperatorTimeoutViewController.swift in Sources */,
+				4EFE2F7C244B2A230000E4AE /* OperatorCombineLatestViewController.swift in Sources */,
+				4EFE2F85244B2A230000E4AE /* OperatorRemoveDuplicatesViewController.swift in Sources */,
+				4EFE2F4F244B29F80000E4AE /* BaseOperatorViewController.swift in Sources */,
+				4EFE2F51244B29F80000E4AE /* OperatorsTableViewController.swift in Sources */,
+				4EFE2F98244B2A500000E4AE /* SubjectNode.swift in Sources */,
+				4EFE2F70244B2A230000E4AE /* OperatorDropFirstViewController.swift in Sources */,
+				4EFE2F9A244B2A500000E4AE /* TimeUpdatingScene.swift in Sources */,
+				4EFE2F81244B2A230000E4AE /* OperatorDropUntilOutputFromViewController.swift in Sources */,
+				4EFE2F74244B2A230000E4AE /* OperatorIgnoreOutputViewController.swift in Sources */,
+				4EFE3009244B311F0000E4AE /* OperatorVariant.swift in Sources */,
+				4EFE2F7D244B2A230000E4AE /* OperatorMulticastViewController.swift in Sources */,
+				4EFE2F88244B2A230000E4AE /* OperatorFilterViewController.swift in Sources */,
+				4EFE2F73244B2A230000E4AE /* OperatorDropWhileViewController.swift in Sources */,
+				4EFE2F72244B2A230000E4AE /* OperatorDebounceViewController.swift in Sources */,
+				4EFE2F7B244B2A230000E4AE /* OperatorZipViewController.swift in Sources */,
+				4EFE2FA0244B2B930000E4AE /* Operator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EFE2F32244B26E90000E4AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EFE2F3C244B26E90000E4AE /* CombineOperatorsCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4EFE2F39244B26E90000E4AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EFE2F2C244B26E90000E4AE /* CombineOperatorsCore */;
+			targetProxy = 4EFE2F38244B26E90000E4AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4EFE2F3F244B26E90000E4AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4EFE2F40244B26E90000E4AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4EFE2F42244B26E90000E4AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glideengine.CombineOperatorsCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EFE2F43244B26E90000E4AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glideengine.CombineOperatorsCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4EFE2F45244B26E90000E4AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glideengine.CombineOperatorsCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EFE2F46244B26E90000E4AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glideengine.CombineOperatorsCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EFE2F27244B26E90000E4AE /* Build configuration list for PBXProject "CombineOperatorsCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EFE2F3F244B26E90000E4AE /* Debug */,
+				4EFE2F40244B26E90000E4AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EFE2F41244B26E90000E4AE /* Build configuration list for PBXNativeTarget "CombineOperatorsCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EFE2F42244B26E90000E4AE /* Debug */,
+				4EFE2F43244B26E90000E4AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EFE2F44244B26E90000E4AE /* Build configuration list for PBXNativeTarget "CombineOperatorsCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EFE2F45244B26E90000E4AE /* Debug */,
+				4EFE2F46244B26E90000E4AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EFE2F24244B26E90000E4AE /* Project object */;
+}
