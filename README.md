@@ -1,8 +1,9 @@
-<p align="center">
-<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/App/CombineOperators/Assets.xcassets/AppIcon.appiconset/icon_152.png" width="128" max-width="80%" alt="combine operators"/>
-</p>
-
 # Combine Operators
+
+<p align="center">
+<a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
+<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/promo.png" max-width="60%" alt="Combine Operators App Store"/>
+</p>
 
 Combine Operators is an interactive tutorial/cheat sheet app that lets you play with Combine framework publishers. It can help you grasp basic concepts or if you are a beginner or refresh your memory during your further journey with the framework.
 
@@ -11,11 +12,6 @@ With Combine Operators you can
 - Observe how subjects and operators behave with different input sequences through helpful animations.
 
 There are plans to make Combine Operators support more advanced input values and subject/operator combinations. Stay tuned and contribute! 🙌
-
-<p align="center">
-<a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
-<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/promo.png" max-width="80%" alt="Combine Operators App Store"/>
-</p>
 
 <p align="center">
 <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
