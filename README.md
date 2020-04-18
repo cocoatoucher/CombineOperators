@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/App/AppIcon.appiconset/icon_152.png" width="128" max-width="80%" alt="combine operators"/>
+<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/App/CombineOperators/Assets.xcassets/AppIcon.appiconset/icon_152.png" width="128" max-width="80%" alt="combine operators"/>
 </p>
 
 # Combine Operators
@@ -19,7 +19,7 @@ There are plans to make Combine Operators support more advanced input values and
 
 <p align="center">
 <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
-<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/interactivecombine.png" width="400" max-width="80%" alt="A glimpse of the app's interactive features">
+<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/interactivecombine.gif" width="400" max-width="80%" alt="A glimpse of the app's interactive features">
 </a>
 </p>
 
