@@ -23,6 +23,8 @@ With Combine Operators you can
 
 There are plans to make Combine Operators support more advanced input values and subject/operator combinations. Stay tuned and contribute! 🙌
 
+*The app is not implemented using SwiftUI, but that is a future plan as well.
+
 <p align="center">
 <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
 <img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/interactivecombine.gif" width="400" max-width="60%" alt="A glimpse of the app's interactive features">
