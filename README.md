@@ -1,6 +1,6 @@
 <p align="center">
 <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/app/combine-operators/id1507756027">
-<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/promo.png" width="200" max-width="80%" alt="Combine Operators App Store"/>
+<img src="https://github.com/cocoatoucher/CombineOperators/raw/master/Docs/promo.png" width="400" max-width="80%" alt="Combine Operators App Store"/>
 </p>
 
 # Combine Operators
