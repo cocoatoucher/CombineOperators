@@ -1,0 +1,8 @@
+xcassets:
+  - inputs: Sources/CombineOperatorsCore/Resources/Media.xcassets
+    outputs:
+      templateName: swift4
+      output: Sources/CombineOperatorsCore/Resources/SwiftGen/Assets.swift
+      params:
+        enumName: Assets
+        publicAccess: true
