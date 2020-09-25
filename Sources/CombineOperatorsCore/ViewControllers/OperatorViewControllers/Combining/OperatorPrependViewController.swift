@@ -29,7 +29,7 @@ import Combine
 class OperatorPrependViewController: BaseOperatorViewController {
     
     override func setupOperator() {
-        operators = [Operator(name: "prepend", description: "S2 prepends S1")]
+        operators = [Operator(name: "prepend", description: "S2 -> S1")]
         
         operatorInfo = "Prefixes a publisher’s output with the elements emitted by the given publisher."
         

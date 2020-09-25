@@ -29,7 +29,7 @@ import Combine
 class OperatorAppendViewController: BaseOperatorViewController {
     
     override func setupOperator() {
-        operators = [Operator(name: "append", description: "S2 appended to S1")]
+        operators = [Operator(name: "append", description: "S2 -> S1")]
         
         operatorInfo = "Appends a publisher’s output with the elements emitted by the given publisher."
         
