@@ -32,6 +32,21 @@ class OperatorCombineLatestViewController: BaseOperatorViewController {
         operators = [Operator(name: "combineLatest", description: nil)]
         
         operatorInfo = "Subscribes to an additional publisher and publishes a tuple upon receiving output from either publisher."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let combineLatest = subject1
+                .combineLatest(subject2)
+            
+            combineLatest
+                .sink(
+                    receiveValue: { first, second in
+                        display("\\(first ?? "nil") \\(second ?? "nil")")
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

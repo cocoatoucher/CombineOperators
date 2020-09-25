@@ -29,10 +29,51 @@ class PublisherNode: SKSpriteNode {
     
     private var pendingIcons: [String] = []
     
+    var numberOfSubscriptions: Int = 0 {
+        didSet {
+            subscriptionsLabelNode.text = "\(numberOfSubscriptions)"
+            subscriptionsNode.isHidden = numberOfSubscriptions == 0
+        }
+    }
+    
+    lazy var subscriptionsNode: SKShapeNode = {
+        let node = SKShapeNode(circleOfRadius: 10)
+        node.fillColor = .blue
+        node.strokeColor = .clear
+        node.addChild(subscriptionsLabelNode)
+        node.isHidden = true
+        return node
+    }()
+    
+    lazy var subscriptionsLabelNode: SKLabelNode = {
+        let node = SKLabelNode()
+        node.fontSize = 10.0
+        node.fontName = UIFont.boldSystemFont(ofSize: 10.0).familyName
+        node.fontColor = UIColor.white
+        node.horizontalAlignmentMode = .center
+        node.verticalAlignmentMode = .center
+        return node
+    }()
+    
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        
+        addChild(subscriptionsNode)
+        subscriptionsNode.position = CGPoint(x: size.width / 2 - 16, y: -size.height / 2 + 16)
+        subscriptionsNode.zPosition = 100
+    }
+    
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func markUpdate(_ update: PublisherUpdate) {
         switch update {
         case .subscription:
             animateIconNamed("link")
+        case .subscriptionCount(let count):
+            numberOfSubscriptions = count
         case .request:
             animateIconNamed("square.and.arrow.up")
         case .cancel:

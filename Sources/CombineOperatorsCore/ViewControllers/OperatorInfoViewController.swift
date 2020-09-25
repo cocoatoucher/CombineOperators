@@ -58,9 +58,17 @@ class OperatorInfoViewController: UIViewController {
     }()
     
     let infoText: NSAttributedString
+    let code: NSAttributedString
     
-    init(infoText: NSAttributedString) {
+    init(infoText: NSAttributedString, code: String) {
         self.infoText = infoText
+        self.code = NSAttributedString(
+            string: code,
+            attributes: [
+                .font: UIFont.monospacedSystemFont(ofSize: 10, weight: .bold),
+                .foregroundColor: UIColor.gray
+            ]
+        )
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -77,7 +85,11 @@ class OperatorInfoViewController: UIViewController {
         view.addSubview(compactBackgroundView)
         view.addSubview(dismissButton)
         
-        titleLabel.attributedText = infoText
+        let mutable = NSMutableAttributedString(attributedString: infoText)
+        mutable.append(NSAttributedString(string: "\n"))
+        mutable.append(NSAttributedString(string: "\n"))
+        mutable.append(code)
+        titleLabel.attributedText = mutable
         view.addSubview(titleLabel)
         
         configureForTraitCollection()

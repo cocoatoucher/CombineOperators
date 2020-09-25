@@ -32,6 +32,24 @@ class OperatorScanViewController: BaseOperatorViewController {
         operators = [Operator(name: "scan", description: "old + new")]
         
         operatorInfo = "Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let scan = subject
+                .scan(("", "")) { (previous, newValue) -> (String?, String?) in
+                    return (previous.1, newValue)
+                }
+            
+            scan
+                .sink(
+                    receiveValue: { value in
+                        let oldValue = value.0
+                        let newValue = value.1
+                        display("\\(oldValue ?? "nil") \\(newValue ?? "nil")")
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -44,8 +62,8 @@ class OperatorScanViewController: BaseOperatorViewController {
         subjects = [subject]
         
         let scan = subject.trackedPublisher!
-            .scan(("", "")) { (oldValue, newValue) -> (String?, String?) in
-                return (oldValue.1, newValue)
+            .scan(("", "")) { (previous, newValue) -> (String?, String?) in
+                return (previous.1, newValue)
             }
         
         subscription = scan

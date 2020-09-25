@@ -32,6 +32,23 @@ class OperatorFlatMapViewController: BaseOperatorViewController {
         operators = [Operator(name: "flatMap", description: "S1 -> S2")]
         
         operatorInfo = "Transforms all elements from an upstream publisher into a new or existing publisher."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let flatMap = subject1
+                .flatMap { _ in
+                    return subject2
+                }
+            
+            flatMap
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -47,9 +64,10 @@ class OperatorFlatMapViewController: BaseOperatorViewController {
         
         subjects = [subject1, subject2]
         
-        let flatMap = subject1.trackedPublisher!.flatMap { value -> AnyPublisher<String?, Error> in
-            return subject2.trackedPublisher!
-        }
+        let flatMap = subject1.trackedPublisher!
+            .flatMap { _ -> AnyPublisher<String?, Error> in
+                return subject2.trackedPublisher!
+            }
         
         subscription = flatMap
             .handleEvents(

@@ -32,6 +32,19 @@ class OperatorLastViewController: BaseOperatorViewController {
         operators = [Operator(name: "last", description: nil)]
         
         operatorInfo = "Only publishes the last element of a stream, after the stream finishes."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let last = subject.last()
+            
+            last
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

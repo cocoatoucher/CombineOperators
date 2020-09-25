@@ -59,12 +59,20 @@ class ValueNode: SKSpriteNode {
     
     private func setupNodes() {
         if value.hasPrefix("finished") == true {
-            self.color = Assets.finishedRed.color
+            if value.hasSuffix("err") {
+                color = Assets.operatorFinishedError.color
+            } else {
+                color = Assets.operatorFinished.color
+            }
         }
         
         addChild(labelNode)
         
-        labelNode.text = value
+        if value == "finished-err" {
+            labelNode.text = "error"
+        } else {
+            labelNode.text = value
+        }
         
         let labelWidth = labelNode.calculateAccumulatedFrame().size.width
         let width = max(labelWidth + 10, 50)

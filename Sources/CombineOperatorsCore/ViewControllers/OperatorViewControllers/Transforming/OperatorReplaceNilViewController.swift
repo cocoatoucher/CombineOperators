@@ -32,6 +32,20 @@ class OperatorReplaceNilViewController: BaseOperatorViewController {
         operators = [Operator(name: "replaceNil", description: "to 🐰")]
         
         operatorInfo = "Replaces nil elements in the stream with the provided element."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let replaceNil = subject
+                .replaceNil(with: "🐰")
+            
+            replaceNil
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -43,7 +57,8 @@ class OperatorReplaceNilViewController: BaseOperatorViewController {
         
         subjects = [subject]
         
-        let replaced = subject.trackedPublisher!.replaceNil(with: "🐰")
+        let replaced = subject.trackedPublisher!
+            .replaceNil(with: "🐰")
         
         subscription = replaced
             .handleEvents(

@@ -32,6 +32,25 @@ class OperatorCompactMapViewController: BaseOperatorViewController {
         operators = [Operator(name: "compactMap", description: "value + 💃")]
         
         operatorInfo = "Calls a closure with each received element and publishes any returned optional that has a value."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let compactMap = subject
+                .compactMap { value -> String? in
+                    if let value = value {
+                        return "\\(value) 💃"
+                    }
+                    return nil
+                }
+            
+            compactMap
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,12 +61,13 @@ class OperatorCompactMapViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let compactMap = subject1.trackedPublisher!.compactMap { value -> String? in
-            if let value = value {
-                return "\(value) 💃"
+        let compactMap = subject1.trackedPublisher!
+            .compactMap { value -> String? in
+                if let value = value {
+                    return "\(value) 💃"
+                }
+                return nil
             }
-            return nil
-        }
         
         subscription = compactMap
             .handleEvents(

@@ -34,6 +34,20 @@ class OperatorDebounceViewController: BaseOperatorViewController {
         operators = [Operator(name: "debounce", description: "3 seconds")]
         
         operatorInfo = "Publishes elements only after a specified time interval elapses between events."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let debounce = subject
+                .debounce(for: 3, scheduler: DispatchQueue.main)
+            
+            debounce
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

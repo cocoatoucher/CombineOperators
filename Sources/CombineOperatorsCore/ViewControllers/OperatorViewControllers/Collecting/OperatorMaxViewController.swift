@@ -32,6 +32,22 @@ class OperatorMaxViewController: BaseOperatorViewController {
         operators = [Operator(name: "max", description: nil)]
         
         operatorInfo = "Publishes the maximum value received from the upstream publisher, after it finishes."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let max = subject
+                .max { left, right -> Bool in
+                    return Int(left) < Int(right)
+                }
+            
+            max
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,17 +58,23 @@ class OperatorMaxViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let last = subject1.trackedPublisher!.max { left, right -> Bool in
-            guard let left = left, let leftInt = Int(left) else {
+        let max = subject1.trackedPublisher!.max { left, right -> Bool in
+            guard
+                let left = left,
+                let leftInt = Int(left)
+            else {
                 return false
             }
-            guard let right = right, let rightInt = Int(right) else {
+            guard
+                let right = right,
+                let rightInt = Int(right)
+            else {
                 return false
             }
             return Int(leftInt) < Int(rightInt)
         }
         
-        subscription = last
+        subscription = max
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }

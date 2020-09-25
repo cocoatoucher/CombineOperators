@@ -32,6 +32,21 @@ class OperatorDropUntilOutputFromViewController: BaseOperatorViewController {
         operators = [Operator(name: "dropUntilOutput", description: "Upstream: S1")]
         
         operatorInfo = "Ignores elements from the upstream publisher until it receives an element from a second publisher."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let dropUntilOutputFrom = subject1
+                .drop(untilOutputFrom: subject2)
+            
+            dropUntilOutputFrom
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -47,7 +62,8 @@ class OperatorDropUntilOutputFromViewController: BaseOperatorViewController {
         
         subjects = [subject1, subject2]
         
-        let dropUntil = subject1.trackedPublisher!.drop(untilOutputFrom: subject2.trackedPublisher!)
+        let dropUntil = subject1.trackedPublisher!
+            .drop(untilOutputFrom: subject2.trackedPublisher!)
         
         subscription = dropUntil
             .handleEvents(

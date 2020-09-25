@@ -32,6 +32,20 @@ class OperatorOutputAtViewController: BaseOperatorViewController {
         operators = [Operator(name: "outputAt", description: "index 1")]
         
         operatorInfo = "Publishes a specific element, indicated by its index in the sequence of published elements."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let outputAt = subject
+                .output(at: 1)
+            
+            outputAt
+                .sink(
+                    receiveValue: { value in
+                        display(value ?? "none")
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,9 +56,9 @@ class OperatorOutputAtViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let last = subject1.trackedPublisher!.output(at: 1)
+        let outputAt = subject1.trackedPublisher!.output(at: 1)
         
-        subscription = last
+        subscription = outputAt
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }
@@ -63,11 +77,7 @@ class OperatorOutputAtViewController: BaseOperatorViewController {
                     self.setCompletionFromOperator(completion: completion)
                 }, receiveValue: { [weak self] value in
                     guard let self = self else { return }
-                    if let value = value {
-                        self.setValueFromOperator(value: value)
-                    } else {
-                        self.setValueFromOperator(value: "none")
-                    }
+                    self.setValueFromOperator(value: value ?? "none")
                 }
             )
     }

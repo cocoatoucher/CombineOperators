@@ -32,6 +32,19 @@ class OperatorPrefixViewController: BaseOperatorViewController {
         operators = [Operator(name: "prefix", description: "length: 2")]
         
         operatorInfo = "Republishes elements up to the specified maximum count."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let prefix = subject.prefix(2)
+            
+            prefix
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

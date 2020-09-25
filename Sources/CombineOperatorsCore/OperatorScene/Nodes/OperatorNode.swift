@@ -38,11 +38,6 @@ class OperatorNode: PublisherNode {
         setupNodes()
     }
     
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func animateValues(_ values: [String], completion: @escaping () -> Void) {
         var wait: TimeInterval = 0
         for (index, value) in values.enumerated() {

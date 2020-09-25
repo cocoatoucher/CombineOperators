@@ -32,6 +32,19 @@ class OperatorCountViewController: BaseOperatorViewController {
         operators = [Operator(name: "count", description: nil)]
         
         operatorInfo = "Publishes the number of elements received from the upstream publisher."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let count = subject.count()
+            
+            count
+                .sink(
+                    receiveValue: { value in
+                        display("\\(value)"))
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,9 +55,9 @@ class OperatorCountViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let last = subject1.trackedPublisher!.count()
+        let count = subject1.trackedPublisher!.count()
         
-        subscription = last
+        subscription = count
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }

@@ -33,9 +33,27 @@ class OperatorThrottleViewController: BaseOperatorViewController {
         subjectValueRestartsCountdown = false
         countdownFinishRestartsCountdown = false
         
-        operators = [Operator(name: "throttle", description: "6 seconds")]
+        operators = [Operator(name: "throttle", description: "6s/latest")]
         
         operatorInfo = "Publishes either the most-recent or first element published by the upstream publisher in the specified time interval."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let throttle = subject
+                .throttle(
+                    for: 6,
+                    scheduler: DispatchQueue.main,
+                    latest: true
+                )
+            
+            throttle
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -46,11 +64,12 @@ class OperatorThrottleViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let throttle = subject1.trackedPublisher!.throttle(
-            for: 6,
-            scheduler: DispatchQueue.main,
-            latest: true
-        )
+        let throttle = subject1.trackedPublisher!
+            .throttle(
+                for: 6,
+                scheduler: DispatchQueue.main,
+                latest: true
+            )
         
         subscription = throttle
             .handleEvents(

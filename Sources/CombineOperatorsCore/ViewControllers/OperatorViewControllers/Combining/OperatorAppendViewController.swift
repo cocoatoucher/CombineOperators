@@ -31,7 +31,22 @@ class OperatorAppendViewController: BaseOperatorViewController {
     override func setupOperator() {
         operators = [Operator(name: "append", description: "S2 appended to S1")]
         
-        operatorInfo = "Appends a publisher’s output with the elements emitted by the given publisher. In this example, values from Subject 1 is appended to Subject 2's values. Try sending some values to Subject 1, and then Finish Subject 1, then send values to Subject 2."
+        operatorInfo = "Appends a publisher’s output with the elements emitted by the given publisher."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let append = subject1
+                .append(subject2)
+            
+            append
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

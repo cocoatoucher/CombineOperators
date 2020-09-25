@@ -32,6 +32,22 @@ class OperatorFilterViewController: BaseOperatorViewController {
         operators = [Operator(name: "filter", description: "value == ✅")]
         
         operatorInfo = "Republishes all elements that match a provided closure."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let filter = subject
+                .filter { value -> Bool in
+                    return value == "✅"
+                }
+            
+            filter
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,9 +58,10 @@ class OperatorFilterViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let filter = subject1.trackedPublisher!.filter { value -> Bool in
-            return value == "✅"
-        }
+        let filter = subject1.trackedPublisher!
+            .filter { value -> Bool in
+                return value == "✅"
+            }
         
         subscription = filter
             .handleEvents(

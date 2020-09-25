@@ -31,7 +31,22 @@ class OperatorPrependViewController: BaseOperatorViewController {
     override func setupOperator() {
         operators = [Operator(name: "prepend", description: "S2 prepends S1")]
         
-        operatorInfo = "Prefixes a publisher’s output with the elements emitted by the given publisher. In this example, values from Subject 2 is prepended to Subject 1's values. Try sending some values to Subject 2, and then Finish Subject 2, then send values to Subject 1."
+        operatorInfo = "Prefixes a publisher’s output with the elements emitted by the given publisher."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let prepend = subject1
+                .prepend(subject2)
+            
+            prepend
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

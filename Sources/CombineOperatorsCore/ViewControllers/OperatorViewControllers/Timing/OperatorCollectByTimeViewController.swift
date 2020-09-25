@@ -35,10 +35,24 @@ class OperatorCollectByTimeViewController: BaseOperatorViewController {
         
         operators = [Operator(name: "collectByTime", description: "5 seconds")]
         
-        operatorInfo = """
-            Collects and publishes elements each time a given interval is hit.
-            `.collect(.byTime(DispatchQueue.main, .seconds(5)))`
-        """
+        operatorInfo = "Collects and publishes elements each time a given interval is hit."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let collectByTime = subject
+                .collect(.byTime(DispatchQueue.main, .seconds(5)))
+            
+            collectByTime
+                .sink(
+                    receiveValue: { values in
+                        let result = values.map {
+                            return $0 ?? "nil"
+                        }
+                        display(result.joined(separator: "-"))
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -49,10 +63,10 @@ class OperatorCollectByTimeViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let last = subject1.trackedPublisher!
+        let collectByTime = subject1.trackedPublisher!
             .collect(.byTime(DispatchQueue.main, .seconds(5)))
         
-        subscription = last
+        subscription = collectByTime
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }
@@ -69,17 +83,12 @@ class OperatorCollectByTimeViewController: BaseOperatorViewController {
                 receiveCompletion: { [weak self] completion in
                     guard let self = self else { return }
                     self.setCompletionFromOperator(completion: completion)
-                }, receiveValue: { [weak self] value in
+                }, receiveValue: { [weak self] values in
                     guard let self = self else { return }
-                    let result = value.map { val -> String in
-                        if let val = val {
-                            return val
-                        } else {
-                            return "nil"
-                        }
+                    let result = values.map {
+                        return $0 ?? "nil"
                     }
-                    let str = result.joined(separator: "-")
-                    self.setValueFromOperator(value: str)
+                    self.setValueFromOperator(value: result.joined(separator: "-"))
                 }
             )
         

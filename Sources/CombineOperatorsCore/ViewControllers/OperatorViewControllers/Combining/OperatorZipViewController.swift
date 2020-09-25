@@ -32,6 +32,22 @@ class OperatorZipViewController: BaseOperatorViewController {
         operators = [Operator(name: "zip", description: nil)]
         
         operatorInfo = "Combines elements from another publisher and deliver pairs of elements as tuples."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let zip = subject1
+                .zip(subject2)
+            
+            zip
+                .sink(
+                    receiveValue: { values in
+                        let result = "\\(values.0 ?? "nil") \\(values.1 ?? "nil")"
+                        display(result)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -48,7 +64,8 @@ class OperatorZipViewController: BaseOperatorViewController {
         
         subjects = [subject1, subject2]
         
-        let zip = subject1.trackedPublisher!.zip(subject2.trackedPublisher!)
+        let zip = subject1.trackedPublisher!
+            .zip(subject2.trackedPublisher!)
         
         subscription = zip
             .handleEvents(
@@ -69,7 +86,7 @@ class OperatorZipViewController: BaseOperatorViewController {
                     self.setCompletionFromOperator(completion: completion)
                 }, receiveValue: { [weak self] values in
                     guard let self = self else { return }
-                    let result = "\(values.0 ?? "") \(values.1 ?? "")"
+                    let result = "\(values.0 ?? "nil") \(values.1 ?? "nil")"
                     self.setValueFromOperator(value: "\(result)")
                 }
             )

@@ -32,6 +32,21 @@ class OperatorMeasureIntervalViewController: BaseOperatorViewController {
         operators = [Operator(name: "measureInterval", description: "in seconds")]
         
         operatorInfo = "Measures and emits the time interval between events received from an upstream publisher."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let measureInterval = subject
+                .measureInterval(using: DispatchQueue.main)
+            
+            measureInterval
+                .sink(
+                    receiveValue: { value in
+                        let seconds = String(format: "%.1f", Double(value.magnitude) / pow(10, 9))
+                        display(seconds)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,10 +57,10 @@ class OperatorMeasureIntervalViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let delay = subject1.trackedPublisher!
+        let measureInterval = subject1.trackedPublisher!
             .measureInterval(using: DispatchQueue.main)
         
-        subscription = delay
+        subscription = measureInterval
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }

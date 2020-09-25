@@ -32,6 +32,22 @@ class OperatorReduceViewController: BaseOperatorViewController {
         operators = [Operator(name: "reduce", description: "➡️ + values")]
         
         operatorInfo = "Applies a closure that collects each element of a stream and publishes a final result upon completion."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let reduce = subject
+                .reduce("➡️") { reduced, value -> String? in
+                    return (reduced ?? "") + (value ?? "nil")
+                }
+            
+            reduce
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -43,12 +59,12 @@ class OperatorReduceViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let reduced = subject1.trackedPublisher!
-            .reduce("➡️") { (reduced, value) -> String? in
+        let reduce = subject1.trackedPublisher!
+            .reduce("➡️") { reduced, value -> String? in
                 return (reduced ?? "") + (value ?? "nil")
             }
         
-        subscription = reduced
+        subscription = reduce
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }

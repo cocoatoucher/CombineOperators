@@ -36,6 +36,20 @@ class OperatorDelayViewController: BaseOperatorViewController {
         operators = [Operator(name: "delay", description: "2 seconds")]
         
         operatorInfo = "Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let delay = subject
+                .delay(for: 2, scheduler: DispatchQueue.main)
+            
+            delay
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

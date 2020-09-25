@@ -32,6 +32,19 @@ class OperatorRemoveDuplicatesViewController: BaseOperatorViewController {
         operators = [Operator(name: "remove\nDuplicates", description: nil)]
         
         operatorInfo = "Publishes only elements that don’t match the previous element."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let removeDuplicates = subject.removeDuplicates()
+            
+            removeDuplicates
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

@@ -32,6 +32,19 @@ class OperatorFirstViewController: BaseOperatorViewController {
         operators = [Operator(name: "first", description: nil)]
         
         operatorInfo = "Publishes the first element of a stream, then finishes."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let first = subject.first()
+            
+            first
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,7 +55,8 @@ class OperatorFirstViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let first = subject1.trackedPublisher!.first()
+        let first = subject1.trackedPublisher!
+            .first()
         
         subscription = first
             .handleEvents(

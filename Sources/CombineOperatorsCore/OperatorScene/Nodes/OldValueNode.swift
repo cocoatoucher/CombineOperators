@@ -48,7 +48,11 @@ class OldValueNode: SKSpriteNode {
     
     private lazy var labelNode: SKLabelNode = {
         let node = SKLabelNode()
-        node.text = value
+        if value == "finished-err" {
+            node.text = "error"
+        } else {
+            node.text = value
+        }
         node.fontSize = 12.0
         node.fontName = UIFont.boldSystemFont(ofSize: 12.0).familyName
         node.fontColor = UIColor.white
@@ -59,7 +63,11 @@ class OldValueNode: SKSpriteNode {
     
     private func setupNodes() {
         if value?.hasPrefix("finished") == true {
-            self.color = Assets.finishedRed.color
+            if value?.hasSuffix("err") == true {
+                color = Assets.operatorFinishedError.color
+            } else {
+                color = Assets.operatorFinished.color
+            }
         }
         
         addChild(labelNode)

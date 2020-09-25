@@ -32,6 +32,20 @@ class OperatorReplaceEmptyViewController: BaseOperatorViewController {
         operators = [Operator(name: "replaceEmpty", description: "to 🙈")]
         
         operatorInfo = "Replaces an empty stream with the provided element. Try tapping `Finish` immediately without sending any values."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let replaceEmpty = subject
+                .replaceEmpty(with: "🙈")
+            
+            replaceEmpty
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,10 +56,10 @@ class OperatorReplaceEmptyViewController: BaseOperatorViewController {
         
         subjects = [subject]
         
-        let replaced = subject.trackedPublisher!
+        let replaceEmpty = subject.trackedPublisher!
             .replaceEmpty(with: "🙈")
         
-        subscription = replaced
+        subscription = replaceEmpty
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }

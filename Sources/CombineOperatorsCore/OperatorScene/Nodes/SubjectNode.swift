@@ -40,11 +40,6 @@ class SubjectNode: PublisherNode {
         setupNodes()
     }
     
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func animateValue(_ value: String, completion: @escaping () -> Void) {
         destroyValue(movesIntoOperator: false)
         
@@ -58,30 +53,32 @@ class SubjectNode: PublisherNode {
     }
     
     func destroyValue(movesIntoOperator: Bool, isOperatorOnRight: Bool = true) {
-        let value = children.first(where: { $0.name == "value" })
-        guard let valueNode = value as? ValueNode else {
-            return
-        }
-        guard valueNode.isRemoved == false else {
-            return
-        }
-        valueNode.isRemoved = true
-        let disappear = SKAction.fadeOut(withDuration: 0.3)
-        var action: SKAction
-        if movesIntoOperator {
-            let moveAmount: CGFloat = (isOperatorOnRight) ? 50.0 : -50.0
-            let moveRight = SKAction.moveBy(x: moveAmount, y: 0, duration: 0.3)
-            action = SKAction.group([disappear, moveRight])
-        } else {
-            action = disappear
-        }
-        valueNode.run(action, completion: { [weak self, weak valueNode] in
-            guard let self = self else { return }
-            if let oldValue = valueNode?.value {
-                self.addOldValue(value: oldValue)
+        for child in children where child.name == "value" {
+            let value = child
+            guard let valueNode = value as? ValueNode else {
+                return
             }
-            valueNode?.removeFromParent()
-        })
+            guard valueNode.isRemoved == false else {
+                return
+            }
+            valueNode.isRemoved = true
+            let disappear = SKAction.fadeOut(withDuration: 0.3)
+            var action: SKAction
+            if movesIntoOperator {
+                let moveAmount: CGFloat = (isOperatorOnRight) ? 50.0 : -50.0
+                let moveRight = SKAction.moveBy(x: moveAmount, y: 0, duration: 0.3)
+                action = SKAction.group([disappear, moveRight])
+            } else {
+                action = disappear
+            }
+            valueNode.run(action, completion: { [weak self, weak valueNode] in
+                guard let self = self else { return }
+                if let oldValue = valueNode?.value {
+                    self.addOldValue(value: oldValue)
+                }
+                valueNode?.removeFromParent()
+            })
+        }
     }
     
     override func markUpdate(_ update: PublisherUpdate) {

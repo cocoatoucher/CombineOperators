@@ -43,25 +43,26 @@ open class OperatorsTableViewController: UITableViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if !targetEnvironment(macCatalyst)
         title = "Combine Operators"
+        #endif
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.book.closed"), style: .plain, target: self, action: #selector(displaySymbols))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "book"), style: .plain, target: self, action: #selector(displaySymbols))
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "OperatorCell")
-        
-        if isCompact == false {
-            let collectViewController = OperatorCollectViewController()
-            collectViewController.title = "collect"
-            updateSecondaryViewController(to: collectViewController)
-        }
     }
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if isCompact == false && didSelectInitialRow == false {
+            
+            let collectViewController = OperatorCollectViewController()
+            collectViewController.title = "collect"
+            updateSecondaryViewController(to: collectViewController)
+            
             tableView.selectRow(
                 at: IndexPath(row: 0, section: 0),
                 animated: false,

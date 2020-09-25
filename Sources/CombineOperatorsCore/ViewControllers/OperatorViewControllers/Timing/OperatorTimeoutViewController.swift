@@ -35,6 +35,20 @@ class OperatorTimeoutViewController: BaseOperatorViewController {
         operators = [Operator(name: "timeout", description: "5 seconds")]
         
         operatorInfo = "Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let timeout = subject
+                .timeout(5, scheduler: DispatchQueue.main)
+            
+            timeout
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

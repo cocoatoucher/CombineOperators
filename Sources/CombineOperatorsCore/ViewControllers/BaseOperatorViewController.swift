@@ -46,6 +46,7 @@ public class BaseOperatorViewController: UIViewController {
     }
     
     var operatorInfo: String?
+    var operatorCode: String?
     
     var subjectOutputCountdown: TimeInterval?
     var countdownFinishKillsPublisher: Bool = false
@@ -139,7 +140,7 @@ public class BaseOperatorViewController: UIViewController {
         view.addSubview(skView)
         view.addSubview(subjectsStackView)
         
-        let resetButton = UIBarButtonItem(image: UIImage.init(systemName: "restart"), style: .plain, target: self, action: #selector(reset))
+        let resetButton = UIBarButtonItem(image: UIImage(systemName: "backward.end"), style: .plain, target: self, action: #selector(reset))
         let infoButton = UIBarButtonItem(image: UIImage.init(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
         navigationItem.rightBarButtonItems = [infoButton, resetButton]
     }
@@ -190,12 +191,17 @@ public class BaseOperatorViewController: UIViewController {
                     if self.subjectValueRestartsCountdown {
                         self.startCountdown()
                     }
+                case .cancel:
+                    subjectView.isButtonsEnabled = false
+                    subject.isFinished = true
                 case .completion:
                     subjectView.isButtonsEnabled = false
                     subject.isFinished = true
                 default:
                     break
                 }
+                
+                subjectView.updateButtons()
                 
                 self.markUpdateForSubject(atIndex: index, update: update)
                 
@@ -244,8 +250,14 @@ public class BaseOperatorViewController: UIViewController {
         guard let operatorInfo = operatorInfo else {
             return
         }
+        guard let operatorCode = operatorCode else {
+            return
+        }
         
-        let viewController = OperatorInfoViewController(infoText: NSAttributedString(string: operatorInfo))
+        let viewController = OperatorInfoViewController(
+            infoText: NSAttributedString(string: operatorInfo),
+            code: operatorCode
+        )
         
         viewController.modalPresentationStyle = .popover
         viewController.popoverPresentationController?.canOverlapSourceViewRect = false

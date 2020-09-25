@@ -32,6 +32,21 @@ class OperatorPrefixUntilOutputFromViewController: BaseOperatorViewController {
         operators = [Operator(name: "prefixUntilOutput", description: "from S2")]
         
         operatorInfo = "Republishes elements until another publisher emits an element."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let prefixUntilOutputFrom = subject1
+                .prefix(untilOutputFrom: subject2)
+            
+            prefixUntilOutputFrom
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

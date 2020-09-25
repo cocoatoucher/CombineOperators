@@ -32,6 +32,22 @@ class OperatorMinViewController: BaseOperatorViewController {
         operators = [Operator(name: "min", description: nil)]
         
         operatorInfo = "Publishes the minimum value received from the upstream publisher, after it finishes."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let min = subject
+                .min { left, right -> Bool in
+                    return Int(left) < Int(right)
+                }
+            
+            min
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {

@@ -38,14 +38,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         #if targetEnvironment(macCatalyst)
         
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        UINavigationBar.appearance().tintColor = Assets.macNavBarTintColor.color
+        
+        windowScene.title = "Combine Operators"
+        
         let splitViewController = UISplitViewController()
         splitViewController.preferredDisplayMode = .allVisible
         splitViewController.presentsWithGesture = false
         splitViewController.primaryBackgroundStyle = .sidebar
 
-        let operatorsTableViewController = OperatorsTableViewController(isCompact: false)
+        let navigationController = UINavigationController(rootViewController: OperatorsTableViewController(isCompact: false))
         
-        splitViewController.viewControllers = [operatorsTableViewController]
+        splitViewController.viewControllers = [navigationController]
 
         window?.rootViewController = splitViewController
         

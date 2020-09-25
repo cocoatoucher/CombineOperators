@@ -32,6 +32,20 @@ class OperatorDropFirstViewController: BaseOperatorViewController {
         operators = [Operator(name: "dropFirst", description: "first 2")]
         
         operatorInfo = "Omits the specified number of elements before republishing subsequent elements."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let dropFirst = subject
+                .dropFirst(2)
+            
+            dropFirst
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,7 +56,8 @@ class OperatorDropFirstViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let dropFirst = subject1.trackedPublisher!.dropFirst(2)
+        let dropFirst = subject1.trackedPublisher!
+            .dropFirst(2)
         
         subscription = dropFirst
             .handleEvents(

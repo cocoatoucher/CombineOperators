@@ -33,7 +33,7 @@ open class SymbolsTableViewController: UITableViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Publisher Symbols Guide"
+        title = "Publisher Symbol Guide"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(performDismiss))
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SymbolCell")
@@ -45,14 +45,19 @@ open class SymbolsTableViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SymbolCell", for: indexPath)
         
-        cell.imageView?.image = UIImage(systemName: imageNames[indexPath.row])
-        cell.textLabel?.text = symbolTitles[indexPath.row]
+        if indexPath.row == 0 {
+            cell.imageView?.image = Assets.numberOfSubscriptions.image
+            cell.textLabel?.text = "Number of subscriptions"
+        } else {
+            cell.imageView?.image = UIImage(systemName: imageNames[indexPath.row - 1])
+            cell.textLabel?.text = symbolTitles[indexPath.row - 1]
+        }
         
         return cell
     }

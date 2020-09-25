@@ -35,11 +35,7 @@ class SubjectView: UIView {
     
     var isButtonsEnabled: Bool = true {
         didSet {
-            guard subject.isFinished == false else {
-                return
-            }
-            titleLabel.isEnabled = isButtonsEnabled
-            buttonsStackView.arrangedSubviews.forEach({ ($0 as? UIButton)?.isEnabled = isButtonsEnabled })
+            updateButtons()
         }
     }
     
@@ -48,6 +44,7 @@ class SubjectView: UIView {
         super.init(frame: .zero)
         
         setupViews()
+        updateButtons()
     }
     
     @available(*, unavailable)
@@ -132,6 +129,12 @@ class SubjectView: UIView {
         }
         let inputValue = subject.inputValues[buttonIndex]
         inputButtonTapCallback?(subject, inputValue)
+    }
+    
+    func updateButtons() {
+        let isEnabled = isButtonsEnabled && subject.isFinished == false && subject.numberOfSubcriptions > 0
+        titleLabel.isEnabled = isEnabled
+        buttonsStackView.arrangedSubviews.forEach({ ($0 as? UIButton)?.isEnabled = isEnabled })
     }
     
 }

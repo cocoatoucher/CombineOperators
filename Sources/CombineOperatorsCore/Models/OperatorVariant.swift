@@ -26,15 +26,14 @@
 import Foundation
 
 enum OperatorVariant: String, CaseIterable {
-    // Transform
+    // Transforming
     case collect
     case map
-    case flatMap
     case replaceEmpty
     case replaceNil
     case scan
     
-    // Filter
+    // Filtering
     case filter
     case removeDuplicates
     case compactMap
@@ -45,17 +44,18 @@ enum OperatorVariant: String, CaseIterable {
     case dropWhile
     case prefix
     
-    // Combined
+    // Combining
     case prepend
     case append
-    case switchToLatest
     case merge
     case combineLatest
     case zip
+    case flatMap
+    case switchToLatest
     case dropUntilOutputFrom
     case prefixUntilOutputFrom
     
-    // Time
+    // Timing
     case delay
     case measureInterval
     case collectByTime
@@ -63,7 +63,7 @@ enum OperatorVariant: String, CaseIterable {
     case throttle
     case timeout
     
-    // Sequence
+    // Collecting
     case min
     case max
     case count

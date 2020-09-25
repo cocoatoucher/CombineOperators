@@ -32,6 +32,22 @@ class OperatorMapViewController: BaseOperatorViewController {
         operators = [Operator(name: "map", description: "value + 🍏")]
         
         operatorInfo = "Transforms all elements from the upstream publisher with a provided closure."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let map = subject
+                .map { value -> String? in
+                    return "\\(value ?? "nil") 🍏"
+                }
+            
+            map
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,11 +58,12 @@ class OperatorMapViewController: BaseOperatorViewController {
         
         subjects = [subject]
         
-        let mapped = subject.trackedPublisher!.map { value -> String? in
-            return "\(value ?? "nil") 🍏"
-        }
+        let map = subject.trackedPublisher!
+            .map { value -> String? in
+                return "\(value ?? "nil") 🍏"
+            }
         
-        subscription = mapped
+        subscription = map
             .handleEvents(
                 receiveSubscription: { [weak self] _ in
                     guard let self = self else { return }

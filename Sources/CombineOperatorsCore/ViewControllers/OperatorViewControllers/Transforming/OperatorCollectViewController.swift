@@ -32,6 +32,20 @@ public class OperatorCollectViewController: BaseOperatorViewController {
         operators = [Operator(name: "collect", description: "count: 3")]
         
         operatorInfo = "Collects up to the specified number of elements, and then emits a single array of the collection."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let collect = subject.collect(3)
+            
+            collect
+                .sink(
+                    receiveValue: { values in
+                        let mappedValues = values.map { $0 ?? "nil" }
+                        display(mappedValues.joined(separator: " "))
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -63,14 +77,8 @@ public class OperatorCollectViewController: BaseOperatorViewController {
                     self.setCompletionFromOperator(completion: completion)
                 }, receiveValue: { [weak self] values in
                     guard let self = self else { return }
-                    var result = ""
-                    for (index, value) in values.enumerated() {
-                        result.append(value ?? "nil")
-                        if index < values.count - 1 {
-                            result.append(" ")
-                        }
-                    }
-                    self.setValueFromOperator(value: result)
+                    let mappedValues = values.map { $0 ?? "nil" }
+                    self.setValueFromOperator(value: mappedValues.joined(separator: " "))
                 }
             )
     }

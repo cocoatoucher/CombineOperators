@@ -32,6 +32,22 @@ class OperatorDropWhileViewController: BaseOperatorViewController {
         operators = [Operator(name: "dropWhile", description: "value == 🌟")]
         
         operatorInfo = "Omits elements from the upstream publisher until a given closure returns false, before republishing all remaining elements."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let dropWhile = subject
+                .drop(while: {
+                    $0 == "🌟"
+                })
+            
+            dropWhile
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,9 +58,10 @@ class OperatorDropWhileViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let dropWhile = subject1.trackedPublisher!.drop(while: {
-            $0 == "🌟"
-        })
+        let dropWhile = subject1.trackedPublisher!
+            .drop(while: {
+                $0 == "🌟"
+            })
         
         subscription = dropWhile
             .handleEvents(

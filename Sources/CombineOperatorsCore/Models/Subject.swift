@@ -32,6 +32,7 @@ enum PublisherUpdate {
     case completion(isError: Bool)
     case cancel
     case request
+    case subscriptionCount(Int)
 }
 
 class Subject {
@@ -45,7 +46,11 @@ class Subject {
     
     var handleUpdate: ((PublisherUpdate) -> Void)?
     
-    var numberOfSubcriptions: Int = 0
+    var numberOfSubcriptions: Int = 0 {
+        didSet {
+            handleUpdate?(.subscriptionCount(numberOfSubcriptions))
+        }
+    }
     
     internal init(
         title: String,

@@ -32,6 +32,21 @@ class OperatorMergeViewController: BaseOperatorViewController {
         operators = [Operator(name: "merge", description: nil)]
         
         operatorInfo = "Combines elements from a publisher with those from another publisher of the same type, delivering an interleaved sequence of elements."
+        
+        operatorCode = """
+            let subject1 = PassthroughSubject<String?, Error>
+            let subject2 = PassthroughSubject<String?, Error>
+            
+            let merge = subject1
+                .merge(with: subject2)
+            
+            merge
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -47,7 +62,8 @@ class OperatorMergeViewController: BaseOperatorViewController {
         
         subjects = [subject1, subject2]
         
-        let merge = subject1.trackedPublisher!.merge(with: subject2.trackedPublisher!)
+        let merge = subject1.trackedPublisher!
+            .merge(with: subject2.trackedPublisher!)
         
         subscription = merge
             .handleEvents(

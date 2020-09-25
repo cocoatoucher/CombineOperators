@@ -32,6 +32,22 @@ class OperatorAllSatisfyViewController: BaseOperatorViewController {
         operators = [Operator(name: "allSatisfy", description: "value % 2 = 0")]
         
         operatorInfo = "Publishes a single Boolean value that indicates whether all received elements pass a given predicate."
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let allSatisfy = subject
+                .allSatisfy { value -> Bool in
+                    return Int(value) % 2 == 0
+                }
+            
+            allSatisfy
+                .sink(
+                    receiveValue: { value in
+                        display("\\(value)"))
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
@@ -42,12 +58,16 @@ class OperatorAllSatisfyViewController: BaseOperatorViewController {
         
         subjects = [subject1]
         
-        let last = subject1.trackedPublisher!.allSatisfy { value -> Bool in
-            guard let value = value, let valueInt = Int(value) else {
-                return false
+        let last = subject1.trackedPublisher!
+            .allSatisfy { value -> Bool in
+                guard
+                    let value = value,
+                    let valueInt = Int(value)
+                else {
+                    return false
+                }
+                return valueInt % 2 == 0
             }
-            return valueInt % 2 == 0
-        }
         
         subscription = last
             .handleEvents(

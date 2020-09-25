@@ -32,6 +32,19 @@ class OperatorIgnoreOutputViewController: BaseOperatorViewController {
         operators = [Operator(name: "ignoreOutput", description: nil)]
         
         operatorInfo = "Ignores all upstream elements, but passes along a completion state (finished or failed). Try sending some values and then tapping `Finish`"
+        
+        operatorCode = """
+            let subject = PassthroughSubject<String?, Error>
+            
+            let ignoreOutput = subject.ignoreOutput()
+            
+            ignoreOutput
+                .sink(
+                    receiveValue: { value in
+                        display(value)
+                    }
+                )
+            """
     }
     
     override func setupBindings() {
