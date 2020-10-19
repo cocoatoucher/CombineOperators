@@ -156,6 +156,8 @@ open class OperatorsTableViewController: UITableViewController {
             return "Timing"
         case 4:
             return "Collecting"
+        case 5:
+            return "Error handling"
         default:
             return ""
         }

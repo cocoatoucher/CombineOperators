@@ -29,6 +29,7 @@ import SpriteKit
 
 enum TestError: Swift.Error {
     case test
+    case mapped
 }
 
 public class BaseOperatorViewController: UIViewController {
@@ -79,8 +80,18 @@ public class BaseOperatorViewController: UIViewController {
     
     func setCompletionFromOperator<Error>(completion: Subscribers.Completion<Error>) {
         switch completion {
-        case .failure:
-            setValueFromOperator(value: "finished-err")
+        case .failure(let error):
+            if let testError = error as? TestError {
+                switch testError {
+                case .mapped:
+                    setValueFromOperator(value: "finished-err-x")
+                default:
+                    setValueFromOperator(value: "finished-err")
+                }
+            } else {
+                setValueFromOperator(value: "finished-err")
+            }
+            
             updateOperator(.completion(isError: true))
         case .finished:
             setValueFromOperator(value: "finished")
@@ -191,9 +202,8 @@ public class BaseOperatorViewController: UIViewController {
                     if self.subjectValueRestartsCountdown {
                         self.startCountdown()
                     }
-                case .cancel:
-                    subjectView.isButtonsEnabled = false
-                    subject.isFinished = true
+                case .subscriptionCount(let subscribers):
+                    subjectView.isButtonsEnabled = subscribers > 0
                 case .completion:
                     subjectView.isButtonsEnabled = false
                     subject.isFinished = true

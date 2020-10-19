@@ -476,6 +476,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CombineOperators/Combine Ops.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7G69W9WN6;
 				INFOPLIST_FILE = CombineOperators/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -497,6 +498,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CombineOperators/Combine Ops.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7G69W9WN6;
 				INFOPLIST_FILE = CombineOperators/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

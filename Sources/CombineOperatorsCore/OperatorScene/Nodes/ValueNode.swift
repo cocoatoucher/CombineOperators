@@ -59,7 +59,7 @@ class ValueNode: SKSpriteNode {
     
     private func setupNodes() {
         if value.hasPrefix("finished") == true {
-            if value.hasSuffix("err") {
+            if value.hasSuffix("err") || value.hasSuffix("err-x") {
                 color = Assets.operatorFinishedError.color
             } else {
                 color = Assets.operatorFinished.color
@@ -68,8 +68,12 @@ class ValueNode: SKSpriteNode {
         
         addChild(labelNode)
         
-        if value == "finished-err" {
-            labelNode.text = "error"
+        if value.hasPrefix("finished-err") == true {
+            if value.hasSuffix("x") == true {
+                labelNode.text = "☠️ error"
+            } else {
+                labelNode.text = "error"
+            }
         } else {
             labelNode.text = value
         }

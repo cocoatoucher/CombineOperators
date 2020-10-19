@@ -72,6 +72,11 @@ enum OperatorVariant: String, CaseIterable {
     case allSatisfy
     case reduce
     
+    // Error handling
+    case mapError
+    case replaceError
+    case catchError
+    
     var sectionIndex: Int {
         switch self {
         
@@ -120,6 +125,11 @@ enum OperatorVariant: String, CaseIterable {
         case .outputAt: return 4
         case .allSatisfy: return 4
         case .reduce: return 4
+            
+        // Error handling
+        case .mapError: return 5
+        case .replaceError: return 5
+        case .catchError: return 5
         }
     }
     
@@ -129,6 +139,7 @@ enum OperatorVariant: String, CaseIterable {
         let section2 = Self.allCases.filter({ $0.sectionIndex == 2 })
         let section3 = Self.allCases.filter({ $0.sectionIndex == 3 })
         let section4 = Self.allCases.filter({ $0.sectionIndex == 4 })
-        return [section0, section1, section2, section3, section4]
+        let section5 = Self.allCases.filter({ $0.sectionIndex == 5 })
+        return [section0, section1, section2, section3, section4, section5]
     }
 }

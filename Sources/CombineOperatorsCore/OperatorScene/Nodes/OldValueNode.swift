@@ -48,8 +48,12 @@ class OldValueNode: SKSpriteNode {
     
     private lazy var labelNode: SKLabelNode = {
         let node = SKLabelNode()
-        if value == "finished-err" {
-            node.text = "error"
+        if value?.hasPrefix("finished-err") == true {
+            if value?.hasSuffix("x") == true {
+                node.text = "☠️ error"
+            } else {
+                node.text = "error"
+            }
         } else {
             node.text = value
         }
@@ -63,7 +67,7 @@ class OldValueNode: SKSpriteNode {
     
     private func setupNodes() {
         if value?.hasPrefix("finished") == true {
-            if value?.hasSuffix("err") == true {
+            if value?.hasSuffix("err") == true || value?.hasSuffix("err-x") == true {
                 color = Assets.operatorFinishedError.color
             } else {
                 color = Assets.operatorFinished.color
