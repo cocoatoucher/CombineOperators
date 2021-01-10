@@ -95,7 +95,7 @@ open class OperatorsTableViewController: UITableViewController {
         return cell
     }
     
-    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let op = OperatorVariant.sections[indexPath.section][indexPath.row]
         guard let className = operatorViewControllerClassFromOperatorName(op.rawValue) as? BaseOperatorViewController.Type else {
@@ -162,6 +162,26 @@ open class OperatorsTableViewController: UITableViewController {
             return ""
         }
     }
+    
+    #if targetEnvironment(macCatalyst)
+    open override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.systemGray2
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10.0),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10.0),
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 5.0),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5.0)
+        ])
+        label.text = self.tableView(tableView, titleForHeaderInSection: section)
+        label.textColor = UIColor.white
+        return view
+    }
+    #endif
     
     private func operatorViewControllerClassFromOperatorName(_ operatorName: String) -> AnyClass? {
         
