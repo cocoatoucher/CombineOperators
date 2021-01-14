@@ -34,7 +34,7 @@ class OperatorCountViewController: BaseOperatorViewController {
         operatorInfo = "Publishes the number of elements received from the upstream publisher."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let count = subject.count()
             

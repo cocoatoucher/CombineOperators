@@ -34,7 +34,7 @@ class OperatorCatchErrorViewController: BaseOperatorViewController {
         operatorInfo = "Handles errors from an upstream publisher by replacing it with another publisher."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let catchError = subject
                 .catch { error in

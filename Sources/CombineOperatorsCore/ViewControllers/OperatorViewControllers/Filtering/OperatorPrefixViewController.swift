@@ -34,7 +34,7 @@ class OperatorPrefixViewController: BaseOperatorViewController {
         operatorInfo = "Republishes elements up to the specified maximum count."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let prefix = subject.prefix(2)
             

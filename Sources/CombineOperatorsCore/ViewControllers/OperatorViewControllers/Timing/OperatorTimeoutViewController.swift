@@ -37,7 +37,7 @@ class OperatorTimeoutViewController: BaseOperatorViewController {
         operatorInfo = "Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let timeout = subject
                 .timeout(5, scheduler: DispatchQueue.main)

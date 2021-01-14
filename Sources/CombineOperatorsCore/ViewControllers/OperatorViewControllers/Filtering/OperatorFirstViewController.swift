@@ -34,7 +34,7 @@ class OperatorFirstViewController: BaseOperatorViewController {
         operatorInfo = "Publishes the first element of a stream, then finishes."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let first = subject.first()
             

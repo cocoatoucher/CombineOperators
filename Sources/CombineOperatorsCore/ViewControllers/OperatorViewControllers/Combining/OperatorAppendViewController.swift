@@ -34,8 +34,8 @@ class OperatorAppendViewController: BaseOperatorViewController {
         operatorInfo = "Appends a publisher’s output with the elements emitted by the given publisher."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let append = subject1
                 .append(subject2)

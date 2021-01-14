@@ -34,8 +34,8 @@ class OperatorDropUntilOutputFromViewController: BaseOperatorViewController {
         operatorInfo = "Ignores elements from the upstream publisher until it receives an element from a second publisher."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let dropUntilOutputFrom = subject1
                 .drop(untilOutputFrom: subject2)

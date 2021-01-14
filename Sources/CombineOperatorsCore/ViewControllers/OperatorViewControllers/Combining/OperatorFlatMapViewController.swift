@@ -34,8 +34,8 @@ class OperatorFlatMapViewController: BaseOperatorViewController {
         operatorInfo = "Transforms all elements from an upstream publisher into a new or existing publisher."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let flatMap = subject1
                 .flatMap { _ in

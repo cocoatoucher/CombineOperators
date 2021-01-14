@@ -34,7 +34,7 @@ class OperatorDropFirstViewController: BaseOperatorViewController {
         operatorInfo = "Omits the specified number of elements before republishing subsequent elements."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let dropFirst = subject
                 .dropFirst(2)

@@ -34,7 +34,7 @@ public class OperatorCollectViewController: BaseOperatorViewController {
         operatorInfo = "Collects up to the specified number of elements, and then emits a single array of the collection."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let collect = subject.collect(3)
             

@@ -34,7 +34,7 @@ class OperatorMeasureIntervalViewController: BaseOperatorViewController {
         operatorInfo = "Measures and emits the time interval between events received from an upstream publisher."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let measureInterval = subject
                 .measureInterval(using: DispatchQueue.main)

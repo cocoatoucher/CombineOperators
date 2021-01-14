@@ -34,7 +34,7 @@ class OperatorContainsViewController: BaseOperatorViewController {
         operatorInfo = "Publishes a Boolean value upon receiving an element equal to the argument."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let contains = subject
                 .contains("🌟")

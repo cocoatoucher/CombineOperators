@@ -34,7 +34,7 @@ class OperatorDropWhileViewController: BaseOperatorViewController {
         operatorInfo = "Omits elements from the upstream publisher until a given closure returns false, before republishing all remaining elements."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let dropWhile = subject
                 .drop(while: {

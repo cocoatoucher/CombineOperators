@@ -34,8 +34,8 @@ class OperatorCombineLatestViewController: BaseOperatorViewController {
         operatorInfo = "Subscribes to an additional publisher and publishes a tuple upon receiving output from either publisher."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let combineLatest = subject1
                 .combineLatest(subject2)

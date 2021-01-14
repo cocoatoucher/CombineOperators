@@ -34,8 +34,8 @@ class OperatorSwitchToLatestViewController: BaseOperatorViewController {
         operatorInfo = "Maps the upstream publisher to a given publisher and cancels the publisher that was mapped before. Analogous to `flatMapLatest` in other reactive frameworks."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let mapAndSwitch = subject1
                 .map { upstreamValue in

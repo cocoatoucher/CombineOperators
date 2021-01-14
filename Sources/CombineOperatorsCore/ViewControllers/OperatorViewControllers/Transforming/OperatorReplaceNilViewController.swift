@@ -34,7 +34,7 @@ class OperatorReplaceNilViewController: BaseOperatorViewController {
         operatorInfo = "Replaces nil elements in the stream with the provided element."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let replaceNil = subject
                 .replaceNil(with: "🐰")

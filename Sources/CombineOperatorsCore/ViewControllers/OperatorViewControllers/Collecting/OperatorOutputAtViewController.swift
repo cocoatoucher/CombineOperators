@@ -34,7 +34,7 @@ class OperatorOutputAtViewController: BaseOperatorViewController {
         operatorInfo = "Publishes a specific element, indicated by its index in the sequence of published elements."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let outputAt = subject
                 .output(at: 1)

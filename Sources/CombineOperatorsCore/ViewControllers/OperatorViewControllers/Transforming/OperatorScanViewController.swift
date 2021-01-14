@@ -34,7 +34,7 @@ class OperatorScanViewController: BaseOperatorViewController {
         operatorInfo = "Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let scan = subject
                 .scan(("", "")) { (previous, newValue) -> (String?, String?) in

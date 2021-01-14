@@ -34,7 +34,7 @@ class OperatorLastViewController: BaseOperatorViewController {
         operatorInfo = "Only publishes the last element of a stream, after the stream finishes."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let last = subject.last()
             

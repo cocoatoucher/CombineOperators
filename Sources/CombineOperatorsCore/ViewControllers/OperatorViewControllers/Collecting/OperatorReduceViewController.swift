@@ -34,7 +34,7 @@ class OperatorReduceViewController: BaseOperatorViewController {
         operatorInfo = "Applies a closure that collects each element of a stream and publishes a final result upon completion."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let reduce = subject
                 .reduce("➡️") { reduced, value -> String? in

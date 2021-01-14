@@ -34,7 +34,7 @@ class OperatorMapErrorViewController: BaseOperatorViewController {
         operatorInfo = "Converts any failure from the upstream publisher into a new error."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let mapError = subject
                 .mapError { error -> Error in

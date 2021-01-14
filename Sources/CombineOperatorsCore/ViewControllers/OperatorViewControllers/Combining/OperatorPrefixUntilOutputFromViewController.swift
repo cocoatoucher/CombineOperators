@@ -34,8 +34,8 @@ class OperatorPrefixUntilOutputFromViewController: BaseOperatorViewController {
         operatorInfo = "Republishes elements until another publisher emits an element."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let prefixUntilOutputFrom = subject1
                 .prefix(untilOutputFrom: subject2)

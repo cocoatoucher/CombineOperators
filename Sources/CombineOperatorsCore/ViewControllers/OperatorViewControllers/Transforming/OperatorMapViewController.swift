@@ -34,7 +34,7 @@ class OperatorMapViewController: BaseOperatorViewController {
         operatorInfo = "Transforms all elements from the upstream publisher with a provided closure."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let map = subject
                 .map { value -> String? in

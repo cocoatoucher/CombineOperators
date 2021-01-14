@@ -34,7 +34,7 @@ class OperatorAllSatisfyViewController: BaseOperatorViewController {
         operatorInfo = "Publishes a single Boolean value that indicates whether all received elements pass a given predicate."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let allSatisfy = subject
                 .allSatisfy { value -> Bool in

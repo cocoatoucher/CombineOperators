@@ -34,7 +34,7 @@ class OperatorMinViewController: BaseOperatorViewController {
         operatorInfo = "Publishes the minimum value received from the upstream publisher, after it finishes."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let min = subject
                 .min { left, right -> Bool in

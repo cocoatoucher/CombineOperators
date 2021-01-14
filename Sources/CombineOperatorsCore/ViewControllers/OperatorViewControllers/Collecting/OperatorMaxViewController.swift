@@ -34,7 +34,7 @@ class OperatorMaxViewController: BaseOperatorViewController {
         operatorInfo = "Publishes the maximum value received from the upstream publisher, after it finishes."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let max = subject
                 .max { left, right -> Bool in

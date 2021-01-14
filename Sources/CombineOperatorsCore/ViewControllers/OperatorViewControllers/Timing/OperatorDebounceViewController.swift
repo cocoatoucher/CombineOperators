@@ -36,7 +36,7 @@ class OperatorDebounceViewController: BaseOperatorViewController {
         operatorInfo = "Publishes elements only after a specified time interval elapses between events."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let debounce = subject
                 .debounce(for: 3, scheduler: DispatchQueue.main)

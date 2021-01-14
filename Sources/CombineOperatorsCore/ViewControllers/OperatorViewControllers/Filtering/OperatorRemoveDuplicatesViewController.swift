@@ -34,7 +34,7 @@ class OperatorRemoveDuplicatesViewController: BaseOperatorViewController {
         operatorInfo = "Publishes only elements that don’t match the previous element."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let removeDuplicates = subject.removeDuplicates()
             

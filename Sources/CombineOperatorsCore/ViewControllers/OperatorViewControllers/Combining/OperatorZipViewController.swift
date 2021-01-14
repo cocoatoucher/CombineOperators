@@ -34,8 +34,8 @@ class OperatorZipViewController: BaseOperatorViewController {
         operatorInfo = "Combines elements from another publisher and deliver pairs of elements as tuples."
         
         operatorCode = """
-            let subject1 = PassthroughSubject<String?, Error>
-            let subject2 = PassthroughSubject<String?, Error>
+            let subject1 = PassthroughSubject<String?, Error>()
+            let subject2 = PassthroughSubject<String?, Error>()
             
             let zip = subject1
                 .zip(subject2)

@@ -38,7 +38,7 @@ class OperatorCollectByTimeViewController: BaseOperatorViewController {
         operatorInfo = "Collects and publishes elements each time a given interval is hit."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let collectByTime = subject
                 .collect(.byTime(DispatchQueue.main, .seconds(5)))

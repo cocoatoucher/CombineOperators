@@ -34,7 +34,7 @@ class OperatorReplaceErrorViewController: BaseOperatorViewController {
         operatorInfo = "Replaces any errors in the stream with the provided element."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let replaceError = subject
                 .replaceError(with: "👻")

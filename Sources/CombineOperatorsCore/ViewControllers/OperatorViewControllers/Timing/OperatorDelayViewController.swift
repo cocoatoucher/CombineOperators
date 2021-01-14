@@ -38,7 +38,7 @@ class OperatorDelayViewController: BaseOperatorViewController {
         operatorInfo = "Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let delay = subject
                 .delay(for: 2, scheduler: DispatchQueue.main)

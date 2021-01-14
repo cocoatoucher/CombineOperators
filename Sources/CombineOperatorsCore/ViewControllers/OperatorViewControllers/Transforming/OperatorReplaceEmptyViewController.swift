@@ -34,7 +34,7 @@ class OperatorReplaceEmptyViewController: BaseOperatorViewController {
         operatorInfo = "Replaces an empty stream with the provided element. Try tapping `Finish` immediately without sending any values."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let replaceEmpty = subject
                 .replaceEmpty(with: "🙈")

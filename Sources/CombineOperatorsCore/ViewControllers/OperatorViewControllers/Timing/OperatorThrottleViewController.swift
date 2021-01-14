@@ -38,7 +38,7 @@ class OperatorThrottleViewController: BaseOperatorViewController {
         operatorInfo = "Publishes either the most-recent or first element published by the upstream publisher in the specified time interval."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let throttle = subject
                 .throttle(

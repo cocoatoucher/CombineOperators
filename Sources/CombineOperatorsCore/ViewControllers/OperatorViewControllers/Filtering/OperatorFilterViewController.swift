@@ -34,7 +34,7 @@ class OperatorFilterViewController: BaseOperatorViewController {
         operatorInfo = "Republishes all elements that match a provided closure."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let filter = subject
                 .filter { value -> Bool in

@@ -34,7 +34,7 @@ class OperatorCompactMapViewController: BaseOperatorViewController {
         operatorInfo = "Calls a closure with each received element and publishes any returned optional that has a value."
         
         operatorCode = """
-            let subject = PassthroughSubject<String?, Error>
+            let subject = PassthroughSubject<String?, Error>()
             
             let compactMap = subject
                 .compactMap { value -> String? in
